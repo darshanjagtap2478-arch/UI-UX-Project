@@ -1,0 +1,309 @@
+
+
+/* 1. VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --navy-900: #12284a;      /* header / footer */
+    --navy-700: #1a365d;      /* headings, links */
+    --gold-500: #c9a24a;      /* borders, decorative accents */
+    --gold-700: #8a6414;      /* gold used for TEXT (passes contrast on white) */
+    --text-dark: #2d3748;
+    --text-muted: #5a6778;
+    --bg-page: #f4f6fa;
+    --bg-card: #ffffff;
+    --bg-soft: #f8fafc;
+    --line: #e2e8f0;
+
+    --radius: 10px;
+    --gap: 20px;
+    --shadow-sm: 0 1px 3px rgba(18, 40, 74, 0.08);
+    --shadow-md: 0 8px 20px rgba(18, 40, 74, 0.10);
+
+    --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-heading: Georgia, 'Times New Roman', serif;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.65;
+    color: var(--text-dark);
+    background-color: var(--bg-page);
+    min-height: 100vh;
+    display: flex;               /* keeps footer at the bottom on short pages */
+    flex-direction: column;
+}
+
+/* 2. HEADER & NAVIGATION
+   ========================================================================== */
+header {
+    background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+    color: #ffffff;
+    text-align: center;
+    padding: 48px 20px 40px;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1.1rem;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    color: #e6d3a3;              
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background-color: var(--bg-card);
+    border-bottom: 3px solid var(--gold-500);
+    box-shadow: var(--shadow-sm);
+}
+
+nav a {
+    color: var(--navy-700);
+    font-weight: 600;
+    font-size: 0.98rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: var(--bg-page);
+    color: var(--gold-700);
+}
+
+nav a:focus-visible {
+    outline: 2px solid var(--gold-500);
+    outline-offset: 2px;
+}
+
+/* 3. MAIN LAYOUT & TYPOGRAPHY
+   ========================================================================== */
+main {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;                     /* pushes footer down */
+}
+
+section {
+    background: var(--bg-card);
+    padding: 35px;
+    margin-bottom: 30px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+    scroll-margin-top: 80px;     /* stops sticky nav covering headings */
+}
+
+h2 {
+    font-family: var(--font-heading);
+    color: var(--navy-700);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold-500);
+}
+
+h3 {
+    font-family: var(--font-heading);
+    color: var(--navy-700);
+    font-size: 1.3rem;
+    margin: 25px 0 12px;
+}
+
+p {
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+}
+
+ul,
+ol {
+    margin: 0 0 20px 25px;
+}
+
+li {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+li::marker {
+    color: var(--gold-700);
+}
+
+strong {
+    color: var(--navy-700);
+}
+
+/* 4. ABOUT SECTION  (text LEFT, image RIGHT)
+   ========================================================================== */
+.about-content-wrapper {
+    display: flex;
+    flex-direction: row-reverse; /* image is first in HTML, so reverse puts it on the right */
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.about-profile-img {
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 3px solid var(--gold-500);
+    background-color: var(--bg-soft);   /* neat box even if image is missing */
+    box-shadow: var(--shadow-md);
+}
+
+.about-text-block {
+    flex: 1;
+    min-width: 0;                /* lets text wrap instead of overflowing */
+}
+
+.about-text-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* 5. FACULTY CARDS  (3 on top, 2 below, centered)
+   ========================================================================== */
+.faculty-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;     /* centers the last row */
+    gap: var(--gap);
+    margin-top: 20px;
+}
+
+.faculty-card {
+    flex: 0 0 calc((100% - 2 * var(--gap)) / 3);   /*  3 per row */
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--gold-500);
+    padding: 22px 16px;
+    border-radius: var(--radius);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faculty-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.faculty-card h4 {
+    color: var(--navy-700);
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+}
+
+.faculty-card p {
+    color: var(--gold-700);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* photo inside each faculty card (same look as the About image) */
+.faculty-img {
+    display: block;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 14px;
+    object-fit: cover;
+    object-position: center top;        /* keeps faces in frame */
+    border-radius: var(--radius);
+    border: 3px solid var(--gold-500);
+    background-color: var(--bg-soft);   /* neat box even if image is missing */
+    box-shadow: var(--shadow-md);
+}
+
+/* 6. FOOTER
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 32px 20px;
+    margin-top: 40px;
+    background-color: var(--navy-900);
+    border-top: 4px solid var(--gold-500);
+}
+
+footer p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+/* 7. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .faculty-card {
+        flex-basis: calc((100% - var(--gap)) / 2);   /* 2 per row */
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 36px 16px 30px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 22px;
+    }
+
+    .about-content-wrapper {
+        flex-direction: column;  /* image on top, text below on phones */
+        text-align: center;
+    }
+
+    .faculty-card {
+        flex-basis: 100%;        /* 1 per row */
+    }
+
+    ul,
+    ol {
+        text-align: left;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}

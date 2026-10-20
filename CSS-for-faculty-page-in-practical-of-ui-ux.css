@@ -1,0 +1,309 @@
+/* ==========================================================================
+   FACULTY PROFILE PAGES STYLESHEET
+   Same Academy Navy + Antique Gold theme as the other pages
+   Used by: prajakta.html, annushree.html, darshan.html, mukesh.html, pradeep.html
+   ========================================================================== */
+
+/* 1. VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --navy-900: #12284a;
+    --navy-700: #1a365d;
+    --gold-500: #c9a24a;      /* borders, decorative accents */
+    --gold-700: #8a6414;      /* gold used for TEXT (readable on white) */
+    --text-dark: #2d3748;
+    --text-muted: #5a6778;
+    --bg-page: #f4f6fa;
+    --bg-card: #ffffff;
+    --bg-soft: #f8fafc;
+    --line: #e2e8f0;
+
+    --radius: 10px;
+    --shadow-sm: 0 1px 3px rgba(18, 40, 74, 0.08);
+    --shadow-md: 0 8px 20px rgba(18, 40, 74, 0.10);
+
+    --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-heading: Georgia, 'Times New Roman', serif;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.65;
+    color: var(--text-dark);
+    background-color: var(--bg-page);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. HEADER & NAVIGATION
+   ========================================================================== */
+header {
+    background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+    color: #ffffff;
+    text-align: center;
+    padding: 48px 20px 40px;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1.1rem;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    color: #e6d3a3;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background-color: var(--bg-card);
+    border-bottom: 3px solid var(--gold-500);
+    box-shadow: var(--shadow-sm);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--navy-700);
+    font-weight: 600;
+    font-size: 0.98rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: var(--bg-page);
+    color: var(--gold-700);
+}
+
+nav a:focus-visible {
+    outline: 2px solid var(--gold-500);
+    outline-offset: 2px;
+}
+
+/* 3. MAIN LAYOUT
+   ========================================================================== */
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.profile-section {
+    background: var(--bg-card);
+    padding: 35px;
+    margin-bottom: 30px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+}
+
+.profile-section h2 {
+    font-family: var(--font-heading);
+    color: var(--navy-700);
+    font-size: 1.7rem;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold-500);
+}
+
+.profile-section h3 {
+    font-family: var(--font-heading);
+    color: var(--navy-700);
+    font-size: 1.25rem;
+    margin: 22px 0 10px;
+}
+
+.profile-section p {
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+}
+
+.profile-section strong {
+    color: var(--navy-700);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--gold-700);
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* 4. PROFILE BLOCK  (text LEFT, photo RIGHT - same as the Home About section)
+   ========================================================================== */
+.profile-wrapper {
+    display: flex;
+    flex-direction: row-reverse;     /* photo is first in HTML, so reverse puts it on the right */
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    object-fit: cover;
+    object-position: center top;     /* keeps faces in frame */
+    border-radius: var(--radius);
+    border: 3px solid var(--gold-500);
+    background-color: var(--bg-soft);
+    box-shadow: var(--shadow-md);
+}
+
+.profile-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-text p:last-child {
+    margin-bottom: 0;
+}
+
+.role-badge {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 3px 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--navy-900);
+    background-color: #f1e3bd;
+    border-radius: 999px;
+}
+
+/* 5. LISTS
+   ========================================================================== */
+.topic-list {
+    margin: 0 0 6px 25px;
+}
+
+.topic-list li {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+.topic-list li::marker {
+    color: var(--gold-700);
+    font-weight: 600;
+}
+
+/* 6. STUDY HELP BUTTONS
+   ========================================================================== */
+.resource-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 6px;
+}
+
+.resource-links a {
+    flex: 1 1 180px;
+    padding: 12px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--navy-700);
+    border-bottom: 3px solid var(--gold-500);
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.resource-links a:hover {
+    background-color: var(--navy-900);
+}
+
+.resource-links a:focus-visible {
+    outline: 3px solid var(--gold-500);
+    outline-offset: 2px;
+}
+
+/* 7. FOOTER
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 32px 20px;
+    margin-top: 40px;
+    background-color: var(--navy-900);
+    border-top: 4px solid var(--gold-500);
+}
+
+footer p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+/* 8. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 600px) {
+    header {
+        padding: 36px 16px 30px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .profile-section {
+        padding: 22px;
+    }
+
+    .profile-wrapper {
+        flex-direction: column;      /* photo on top, text below on phones */
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .topic-list {
+        text-align: left;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}

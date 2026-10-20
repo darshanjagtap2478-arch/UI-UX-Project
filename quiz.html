@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical UI/UX Quiz page</title>
+    <link rel="stylesheet" href="CSS-for-quiz-page-in-practical-of-ui-ux.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Practise Your Skills</h1>
+        <p>Pick a test and check what you know</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="Home_Practical.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="materials.html">Study-Materials</a>
+        <a href="quiz.html" aria-current="page">Quiz</a>
+        <a href="resources.html">Student Resources</a>
+    </nav>
+
+    <main>
+        <section class="quiz-section">
+            <h2>Choose a test to start</h2>
+            <p class="section-intro">Take a single subject test, or try the All-in-One test to check everything at once.</p>
+
+            <!-- 6 containers: 5 subjects + 1 all-in-one (each card links to its test page, to be made later) -->
+            <div class="quiz-grid">
+                <a href="quiz-wt.html" class="quiz-card">
+                    <span class="quiz-icon" aria-hidden="true">🌐</span>
+                    <h3>Web Technology</h3>
+                    <p class="quiz-topics">WWW, Internet and HTML</p>
+                    <span class="quiz-start">Start Test &rarr;</span>
+                </a>
+                <a href="quiz-cpp.html" class="quiz-card">
+                    <span class="quiz-icon" aria-hidden="true">💻</span>
+                    <h3>C++</h3>
+                    <p class="quiz-topics">Basics, Functions and Arrays</p>
+                    <span class="quiz-start">Start Test &rarr;</span>
+                </a>
+                <a href="quiz-automations.html" class="quiz-card">
+                    <span class="quiz-icon" aria-hidden="true">🤖</span>
+                    <h3>Automations</h3>
+                    <p class="quiz-topics">AI, Prompting and n8n</p>
+                    <span class="quiz-start">Start Test &rarr;</span>
+                </a>
+                <a href="quiz-coa.html" class="quiz-card">
+                    <span class="quiz-icon" aria-hidden="true">🧮</span>
+                    <h3>COA</h3>
+                    <p class="quiz-topics">Number System, Logic Gates, Encoding</p>
+                    <span class="quiz-start">Start Test &rarr;</span>
+                </a>
+                <a href="quiz-dm.html" class="quiz-card">
+                    <span class="quiz-icon" aria-hidden="true">📐</span>
+                    <h3>DM</h3>
+                    <p class="quiz-topics">Sets, Functions, Relations, Logic</p>
+                    <span class="quiz-start">Start Test &rarr;</span>
+                </a>
+                <a href="quiz-all.html" class="quiz-card quiz-card--all">
+                    <span class="quiz-icon" aria-hidden="true">🏆</span>
+                    <h3>All-in-One Test</h3>
+                    <p class="quiz-topics">Mixed questions from all 5 subjects</p>
+                    <span class="quiz-start">Start Test &rarr;</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Good Grades Follows My brother !!</p>
+    </footer>
+
+</body>
+</html>

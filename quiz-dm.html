@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DM - Practical UI/UX Quiz</title>
+    <link rel="stylesheet" href="CSS-for-quiz-page-in-practical-of-ui-ux.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>DM</h1>
+        <p>5 questions &middot; Sets, Functions, Relations, Logic</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="Home_Practical.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="materials.html">Study-Materials</a>
+        <a href="quiz.html" aria-current="page">Quiz</a>
+        <a href="resources.html">Student Resources</a>
+    </nav>
+
+    <main class="narrow">
+        <section class="quiz-section">
+            <a href="quiz.html" class="back-link">&larr; Back to all tests</a>
+            <h2>Choose the correct answer for each question</h2>
+
+            <form action="#">
+
+                <ol class="question-list">
+                    <li class="question">
+                        <p class="question-text">A set with no elements is called:</p>
+                            <label class="option"><input type="radio" name="q1" value="a" required> <span>Universal set</span></label>
+                            <label class="option"><input type="radio" name="q1" value="b" required> <span>Empty set</span></label>
+                            <label class="option"><input type="radio" name="q1" value="c" required> <span>Singleton set</span></label>
+                            <label class="option"><input type="radio" name="q1" value="d" required> <span>Subset</span></label>
+                    </li>
+                    <li class="question">
+                        <p class="question-text">If A = {1, 2, 3} and B = {3, 4}, then A &cap; B =</p>
+                            <label class="option"><input type="radio" name="q2" value="a" required> <span>{1, 2, 3, 4}</span></label>
+                            <label class="option"><input type="radio" name="q2" value="b" required> <span>{1, 2}</span></label>
+                            <label class="option"><input type="radio" name="q2" value="c" required> <span>{3}</span></label>
+                            <label class="option"><input type="radio" name="q2" value="d" required> <span>{4}</span></label>
+                    </li>
+                    <li class="question">
+                        <p class="question-text">A relation in which every input has exactly one output is called a:</p>
+                            <label class="option"><input type="radio" name="q3" value="a" required> <span>Function</span></label>
+                            <label class="option"><input type="radio" name="q3" value="b" required> <span>Set</span></label>
+                            <label class="option"><input type="radio" name="q3" value="c" required> <span>Matrix</span></label>
+                            <label class="option"><input type="radio" name="q3" value="d" required> <span>Graph</span></label>
+                    </li>
+                    <li class="question">
+                        <p class="question-text">How many subsets does a set with 3 elements have?</p>
+                            <label class="option"><input type="radio" name="q4" value="a" required> <span>3</span></label>
+                            <label class="option"><input type="radio" name="q4" value="b" required> <span>6</span></label>
+                            <label class="option"><input type="radio" name="q4" value="c" required> <span>8</span></label>
+                            <label class="option"><input type="radio" name="q4" value="d" required> <span>9</span></label>
+                    </li>
+                    <li class="question">
+                        <p class="question-text">By De Morgan's law, &not;(p &and; q) is equal to:</p>
+                            <label class="option"><input type="radio" name="q5" value="a" required> <span>&not;p &and; &not;q</span></label>
+                            <label class="option"><input type="radio" name="q5" value="b" required> <span>&not;p &or; &not;q</span></label>
+                            <label class="option"><input type="radio" name="q5" value="c" required> <span>p &or; q</span></label>
+                            <label class="option"><input type="radio" name="q5" value="d" required> <span>p &and; q</span></label>
+                    </li>
+                </ol>
+
+                <button type="submit">Submit Answers</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Good Grades Follows My brother !!</p>
+    </footer>
+
+</body>
+</html>

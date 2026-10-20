@@ -1,0 +1,404 @@
+/* ==========================================================================
+   QUIZ PAGE STYLESHEET (test selection page)
+   Same Academy Navy + Antique Gold theme as the other pages
+   ========================================================================== */
+
+/* 1. VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --navy-900: #12284a;
+    --navy-700: #1a365d;
+    --gold-500: #c9a24a;      /* borders, decorative accents */
+    --gold-700: #8a6414;      /* gold used for TEXT (readable on white) */
+    --text-dark: #2d3748;
+    --text-muted: #5a6778;
+    --bg-page: #f4f6fa;
+    --bg-card: #ffffff;
+    --bg-soft: #f8fafc;
+    --line: #e2e8f0;
+
+    --radius: 10px;
+    --gap: 20px;
+    --shadow-sm: 0 1px 3px rgba(18, 40, 74, 0.08);
+    --shadow-md: 0 8px 20px rgba(18, 40, 74, 0.10);
+
+    --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-heading: Georgia, 'Times New Roman', serif;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.65;
+    color: var(--text-dark);
+    background-color: var(--bg-page);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. HEADER & NAVIGATION
+   ========================================================================== */
+header {
+    background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+    color: #ffffff;
+    text-align: center;
+    padding: 48px 20px 40px;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1.05rem;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #e6d3a3;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background-color: var(--bg-card);
+    border-bottom: 3px solid var(--gold-500);
+    box-shadow: var(--shadow-sm);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--navy-700);
+    font-weight: 600;
+    font-size: 0.98rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: var(--bg-page);
+    color: var(--gold-700);
+}
+
+nav a:focus-visible {
+    outline: 2px solid var(--gold-500);
+    outline-offset: 2px;
+}
+
+nav a[aria-current="page"] {
+    background-color: var(--navy-700);
+    color: #ffffff;
+}
+
+/* 3. MAIN LAYOUT
+   ========================================================================== */
+main {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.quiz-section {
+    background: var(--bg-card);
+    padding: 35px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+}
+
+.quiz-section h2 {
+    font-family: var(--font-heading);
+    color: var(--navy-700);
+    font-size: 1.6rem;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold-500);
+}
+
+.section-intro {
+    color: var(--text-muted);
+    font-size: 1.02rem;
+}
+
+/* 4. TEST CARDS (6 containers, 3 per row)
+   ========================================================================== */
+.quiz-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap);
+    margin-top: 25px;
+}
+
+.quiz-card {
+    flex: 0 0 calc((100% - 2 * var(--gap)) / 3);   /* exactly 3 per row */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 26px 18px;
+    text-decoration: none;
+    color: var(--text-dark);
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--gold-500);
+    border-radius: var(--radius);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quiz-card:hover,
+.quiz-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.quiz-card:focus-visible {
+    outline: 3px solid var(--gold-500);
+    outline-offset: 2px;
+}
+
+.quiz-icon {
+    font-size: 2.6rem;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.quiz-card h3 {
+    font-family: var(--font-heading);
+    color: var(--navy-700);
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+}
+
+.quiz-topics {
+    font-size: 0.93rem;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+}
+
+.quiz-start {
+    margin-top: auto;            /* keeps the button at the bottom of every card */
+    padding: 9px 22px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--navy-700);
+    border-bottom: 3px solid var(--gold-500);
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.quiz-card:hover .quiz-start {
+    background-color: var(--navy-900);
+}
+
+/* the 6th card (All-in-One) stands out */
+.quiz-card--all {
+    background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+    border-color: var(--navy-900);
+    border-top-color: var(--gold-500);
+}
+
+.quiz-card--all h3 {
+    color: #ffffff;
+}
+
+.quiz-card--all .quiz-topics {
+    color: #cbd5e0;
+}
+
+.quiz-card--all .quiz-start {
+    color: var(--navy-900);
+    background-color: var(--gold-500);
+    border-bottom-color: #ffffff;
+}
+
+.quiz-card--all:hover .quiz-start {
+    background-color: #e6c168;
+}
+
+/* 5. TEST PAGES: QUESTIONS, OPTIONS & SUBMIT BUTTON
+   ========================================================================== */
+main.narrow {
+    max-width: 760px;            /* test pages are narrow and easy to read */
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--gold-700);
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.question-list {
+    list-style: none;
+    counter-reset: question;
+    margin: 26px 0 10px;
+}
+
+.question {
+    counter-increment: question;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--gold-500);
+    border-radius: var(--radius);
+}
+
+.question-text {
+    font-weight: 600;
+    color: var(--navy-700);
+    margin-bottom: 12px;
+}
+
+.question-text::before {
+    content: counter(question) ". ";
+    color: var(--gold-700);
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    transition: border-color 0.2s ease;
+}
+
+.option:hover {
+    border-color: var(--gold-500);
+}
+
+.option:focus-within {
+    border-color: var(--navy-700);
+    box-shadow: 0 0 0 3px rgba(201, 162, 74, 0.35);
+}
+
+.option input {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--navy-700);
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 13px 20px;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+    background-color: var(--navy-700);
+    border: none;
+    border-bottom: 3px solid var(--gold-500);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--navy-900);
+}
+
+button[type="submit"]:focus-visible {
+    outline: 3px solid var(--gold-500);
+    outline-offset: 2px;
+}
+
+/* 6. FOOTER
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 32px 20px;
+    margin-top: 40px;
+    background-color: var(--navy-900);
+    border-top: 4px solid var(--gold-500);
+}
+
+footer p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+/* 7. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .quiz-card {
+        flex-basis: calc((100% - var(--gap)) / 2);   /* 2 per row */
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 36px 16px 30px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .quiz-section {
+        padding: 22px;
+    }
+
+    .quiz-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .quiz-card {
+        flex-basis: 100%;                            /* 1 per row */
+    }
+
+    .question {
+        padding: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
