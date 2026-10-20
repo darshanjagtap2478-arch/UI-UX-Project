@@ -37,7 +37,7 @@ This is my UI/UX project, built using only **HTML and CSS** (a separate external
 ![Quiz Page Example](quiz%20page%20example%201.png)
 
 ### Student Resources Page
-![Student Resources Page](student%20resosurces%20page.png)
+![Student Resources Page](student%20resources%20page.png)
 
 > **Note:** Some screenshots do not show the footer. The screenshot did not capture it, but the footer is there on every page.
 
